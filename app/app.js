@@ -1,14 +1,4 @@
-/**
- * 
- * AngularJS Boilerplate
- * @description           Description
- * @author                Jozef Butko // www.jozefbutko.com/resume
- * @url                   www.jozefbutko.com
- * @version               1.1.7
- * @date                  March 2015
- * @license               MIT
- * 
- */
+
 ;(function() {
 
 
@@ -30,7 +20,7 @@
    *
    * You can leave it here in the config section or take it out
    * into separate file
-   * 
+   *
    */
   function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
 
@@ -40,8 +30,8 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'HomeController',
+        controllerAs: 'home_controller'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
@@ -51,6 +41,16 @@
       .when('/setup', {
         templateUrl: 'views/setup.html',
         controller: 'MainController',
+        controllerAs: 'main'
+      })
+      .when('/admin', {
+          templateUrl: 'views/admin.html',
+          controller: 'AdminController',
+          controllerAs: 'main'
+      })
+      .when('/stats', {
+        templateUrl: 'views/stats.html',
+        controller: 'StatsController',
         controllerAs: 'main'
       })
       .otherwise({
@@ -65,7 +65,7 @@
   /**
    * You can intercept any request or response inside authInterceptor
    * or handle what should happend on 40x, 50x errors
-   * 
+   *
    */
   angular
     .module('boilerplate')
